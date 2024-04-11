@@ -62,6 +62,13 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" telescope
+"Plug 'nvim-lua/plenary.nvim'
+"Plug 'nvim-tree/nvim-web-devicons'
+"Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+
 " dashboard-nvim
 "Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvimdev/dashboard-nvim'
