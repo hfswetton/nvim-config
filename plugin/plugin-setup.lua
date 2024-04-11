@@ -35,7 +35,7 @@ require('lspconfig').pylsp.setup{
                 ruff = {
                   enabled = true,  -- Enable the plugin
                   formatEnabled = true,  -- Enable formatting using ruffs formatter
-                  executable = "/usr/users/henry/mambaforge/bin/ruff",  -- Custom path to ruff
+                  executable = "~/mambaforge/bin/ruff",  -- Custom path to ruff
                   -- config = "<path_to_custom_ruff_toml>",  -- Custom config for ruff to use
                   extendSelect = { "I" },  -- Rules that are additionally used by ruff
                   extendIgnore = { "C90" },  -- Rules that are additionally ignored by ruff
