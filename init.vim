@@ -64,19 +64,19 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " telescope
-"Plug 'nvim-lua/plenary.nvim'
-"Plug 'nvim-tree/nvim-web-devicons'
-"Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 
 " dashboard-nvim
-"Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvimdev/dashboard-nvim'
 
 " lspsaga
 Plug 'nvim-treesitter/nvim-treesitter'
-"Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvimdev/lspsaga.nvim'
 
 " vim-floaterm
@@ -90,8 +90,21 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'Konfekt/FastFold'
 Plug 'tmhedberg/SimpylFold'
 Plug 'sbdchd/neoformat'
+
+" vim-easymotion
+Plug 'easymotion/vim-easymotion'
+
+" sneak.vim
+Plug 'justinmk/vim-sneak'
+
+" vim-visual-multi
 Plug 'mg979/vim-visual-multi'
-Plug 'preservim/nerdcommenter'
+
+" vim-commentary
+Plug 'tpope/vim-commentary'
+
+" vim-indent-object
+Plug 'michaeljsmith/vim-indent-object'
 
 " GitHub Copilot
 "Plug 'github/copilot.vim'
