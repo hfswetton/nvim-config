@@ -36,9 +36,27 @@ nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
 " When python filetype is detected, F5 can be used to execute script
 autocmd FileType python nnoremap <buffer> <F5> :w<cr>:exec '!clear'<cr>:exec '!python3' shellescape(expand('%:p'), 1)<cr>
 
-" Load vim-plug
-call plug#begin('~/.config/nvim/plugged')
+" *** Plugins ***
+" uses vim-plug script located at ~/.local/share/nvim/site/autoload/plug.vim
+call plug#begin()
 
+" nvim-tree
+Plug 'nvim-tree/nvim-web-devicons' " optional
+Plug 'nvim-tree/nvim-tree.lua'
+
+" vim-surround
+Plug 'tpope/vim-surround'
+
+" nvim-cokeline
+Plug 'nvim-lua/plenary.nvim'        " Required for v0.4.0+
+Plug 'nvim-tree/nvim-web-devicons' " If you want devicons
+Plug 'willothy/nvim-cokeline'
+
+" feline
+Plug 'feline-nvim/feline.nvim'
+
+" nvim-lspconfig
+" See https://microsoft.github.io/language-server-protocol/implementors/servers/ for possible LSPs
 Plug 'neovim/nvim-lspconfig'
 
 " fzf.vim
