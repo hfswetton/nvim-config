@@ -1,4 +1,5 @@
 set termguicolors
+au TextYankPost * silent! lua vim.highlight.on_yank()
 
 " *** Config from https://neovim.io/doc/user/nvim.html#nvim-from-vim ***
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
@@ -27,12 +28,12 @@ set softtabstop=4               "setting tab to 4 columns
 set showmatch                   "display matching bracket or parenthesis
 set hlsearch incsearch          "highlight all pervious search pattern with incsearch
 
-highlight ColorColumn ctermbg=9 "display ugly bright red bar at color column number
+"highlight ColorColumn ctermbg=9 "display ugly bright red bar at color column number
 
 " Keybind Ctrl+l to clear search
 nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
 
-" When python filetype is detected, F5 can be used to execute script 
+" When python filetype is detected, F5 can be used to execute script
 autocmd FileType python nnoremap <buffer> <F5> :w<cr>:exec '!clear'<cr>:exec '!python3' shellescape(expand('%:p'), 1)<cr>
 
 " *** Plugins ***
@@ -63,22 +64,22 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " telescope
-"Plug 'nvim-lua/plenary.nvim'
-"Plug 'nvim-tree/nvim-web-devicons'
-"Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 
 " dashboard-nvim
-"Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvimdev/dashboard-nvim'
 
 " nvim-treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " lspsaga
-"Plug 'nvim-treesitter/nvim-treesitter'
-"Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvimdev/lspsaga.nvim'
 
 " vim-floaterm
@@ -86,6 +87,27 @@ Plug 'voldikss/vim-floaterm'
 
 " tokyonight
 Plug 'folke/tokyonight.nvim'
+
+" [from hw-tp-fed]
+Plug 'jiangmiao/auto-pairs'
+Plug 'Konfekt/FastFold'
+Plug 'tmhedberg/SimpylFold'
+Plug 'sbdchd/neoformat'
+
+" vim-easymotion
+Plug 'easymotion/vim-easymotion'
+
+" sneak.vim
+Plug 'justinmk/vim-sneak'
+
+" vim-visual-multi
+Plug 'mg979/vim-visual-multi'
+
+" vim-commentary
+Plug 'tpope/vim-commentary'
+
+" vim-indent-object
+Plug 'michaeljsmith/vim-indent-object'
 
 " GitHub Copilot
 "Plug 'github/copilot.vim'
@@ -97,3 +119,21 @@ let g:floaterm_keymap_new    = '<F7>'
 let g:floaterm_keymap_prev   = '<F8>'
 let g:floaterm_keymap_next   = '<F9>'
 let g:floaterm_keymap_toggle = '<F12>'
+
+" Neoformat settings
+augroup fmt  " Run formatter on save
+    autocmd!
+    autocmd BufWritePre * undojoin | Neoformat
+augroup END
+let g:neoformat_basic_format_align = 1
+let g:neoformat_basic_format_retab = 1
+let g:neoformat_basic_format_trim = 1
+
+" SimpylFold settings
+let g:SimpylFold_docstring_preview = 1
+
+" Enable tab/shift-tab to cycle completion options
+"inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+"inoremap <expr> <S-Tab> pumvisible() ? "\<C-n>" : "\<S-Tab>"
+"let g:completion_enable_fuzzy_match = 1
+"set completeopt=menuone,noinsert,noselect
