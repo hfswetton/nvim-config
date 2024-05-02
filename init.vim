@@ -73,8 +73,11 @@ Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 "Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvimdev/dashboard-nvim'
 
+" nvim-treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 " lspsaga
-Plug 'nvim-treesitter/nvim-treesitter'
+"Plug 'nvim-treesitter/nvim-treesitter'
 "Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvimdev/lspsaga.nvim'
 
@@ -88,3 +91,9 @@ Plug 'folke/tokyonight.nvim'
 "Plug 'github/copilot.vim'
 
 call plug#end()
+
+" ***FloaTerm plugins***
+let g:floaterm_keymap_new    = '<F7>'
+let g:floaterm_keymap_prev   = '<F8>'
+let g:floaterm_keymap_next   = '<F9>'
+let g:floaterm_keymap_toggle = '<F12>'
